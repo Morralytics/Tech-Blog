@@ -15,4 +15,4 @@ const sequalize = new Sequelize(
 );
 
 // Exports the newly created Sequelize server information for the main server.js file to use
-module.exports = sequalize;
+module.exports = sequelize;
