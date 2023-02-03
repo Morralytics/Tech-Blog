@@ -30,6 +30,21 @@ User.init(
                 len: [8],
             }
         }
+    },
+    {
+        hooks: {
+            beforeCreate: (newUserData) => {
+
+            },
+            beforeUpdate: (newUserData) => {
+
+            }
+        },
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user'
     }
 );
 
