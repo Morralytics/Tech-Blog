@@ -29,6 +29,10 @@ User.init(
             validate: {
                 len: [8],
             }
+        },
+        loggedIn: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
         }
     },
     {
