@@ -30,10 +30,6 @@ User.init(
                 len: [8],
             }
         },
-        loggedIn: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-        }
     },
     {
         hooks: {

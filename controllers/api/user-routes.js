@@ -3,11 +3,19 @@ const { User } = require('../../models/User');
 
 router.post('/', async (req, res) => {
     try {
-        const postData = await User.create();
-        res.status(200).json(postData)
+        const postData = await User.create({
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password,
+        });
+
+        req.session.save(() => {
+            req.session.loggedIn = true;
+            res.status(200).json(postData)
+        });
     } catch (err) {
         res.status(400).json(err);
     }
-})
+});
 
 module.exports = router;
