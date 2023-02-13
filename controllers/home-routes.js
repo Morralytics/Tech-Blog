@@ -5,9 +5,7 @@ const { User, Post, Comment } = require('../models');
 // Sends to homepage
 router.get('/', async (req, res) => {
     try {
-        const userData = await User.findAll({
-            include: [ User, Comment ]
-        });
+        const userData = await User.findAll({});
         const user = userData.map((users) =>
         users.get({ plain: true })
         );
