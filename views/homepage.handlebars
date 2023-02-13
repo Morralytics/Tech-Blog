@@ -1,14 +1,3 @@
 
-{{!-- This will display the user --}}
-{{!-- {{#each user as |user|}}
-<div>
-    {{user.name}}
-</div>
-{{/each}} --}}
-
-{{!-- This will display all the posts --}}
-{{#each userPosts as |post|}}
-<div>
-    {{post.post}}
-</div>
-{{/each}}
+{{!-- Shows the user post and the user who created it --}}
+{{> user-post}} by: {{> user-details}}
