@@ -1,11 +1,13 @@
 const router = require('express').Router();
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 
 
 // Sends to homepage
 router.get('/', async (req, res) => {
     try {
-        const userData = await User.findAll({});
+        const userData = await User.findAll({
+            include: [ User, Comment ]
+        });
         const user = userData.map((users) =>
         users.get({ plain: true })
         );
@@ -18,7 +20,6 @@ router.get('/', async (req, res) => {
         res.render('homepage', {
             user,
             userPosts,
-            loggedIn: req.session.loggedIn,
         });
     } catch (err) {
         res.status(400).json(err);
