@@ -2,7 +2,7 @@ const postForm = async (event) => {
     event.preventDefault();
 
     const text = document.querySelector('#text-confirm').value.trim();
-    const username = document.querySelector('#username-confirm').value.trim();
+    const username = document.querySelector('#username-id-confirm').value.trim();
 
     if (text && username) {
         const response = await fetch('/api/posts/', {
@@ -18,3 +18,5 @@ const postForm = async (event) => {
         }
     }
 };
+
+document.querySelector('.post-form').addEventListener('submit', postForm);
