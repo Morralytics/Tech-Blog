@@ -16,18 +16,18 @@
     <a href="">Home</a>
     <a href="">Dashboard</a>
     {{#if loggedIn}}
-    <a href="/logout">Logout</a>
+    <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
   </nav>
   <main>
-    <div class="blog">
+    <div class="post">
       {{{body}}}
     </div>
   </main>
   {{#if loggedIn}}
-  <script src="../../public/js/login.js"></script>
+  <script src="./js/logout.js"></script>
   {{/if}}
 </body>
 
