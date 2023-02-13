@@ -5,17 +5,12 @@ const { User, Post } = require('../models');
 // Sends to homepage
 router.get('/', async (req, res) => {
     try {
-        const postData = await User.findAll({
-            include: [
-                {
-                    model: Post,
-                },
-            ],
-        });
-
-        const posts = postData.map((users) =>
-        users.get({ plain: true })
+        const postData = await Post.findAll({});
+        
+        const posts = postData.map((posts) =>
+        posts.get({ plain: true })
         );
+        console.log(posts);
         res.render('homepage', {
             posts,
             loggedIn: req.session.loggedIn,
