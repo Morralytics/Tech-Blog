@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const postData = await User.create({
-            name: req.body.name,
+            username: req.body.username,
             email: req.body.email,
             password: req.body.password,
         });
@@ -51,7 +51,7 @@ router.delete('/:id', async (req, res) => {
 // Login 
 router.post('/login', async (req, res) => {
     try {
-        const userLoginData = await User.findOne({ where: { name: req.body.name }});
+        const userLoginData = await User.findOne({ where: { username: req.body.username }});
 
         if (!userLoginData) {
             res.status(400).json({ msg: 'Try again, incorrect password or username' });
