@@ -1,6 +1,17 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// Gets all users
+router.get('/', async (req, res) => {
+    try {
+        const userData = await User.findAll();
+        res.status(200).json(userData)
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+// Creates a user
 router.post('/',  async (req, res) => {
     try {
         const postData = await User.create({
@@ -19,6 +30,7 @@ router.post('/',  async (req, res) => {
     }
 });
 
+// Deletes a user
 router.delete('/:id', async (req, res) => {
     try {
         const deletedUser = await User.destroy({
