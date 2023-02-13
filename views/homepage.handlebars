@@ -1,8 +1,14 @@
+
+{{!-- This will display the user --}}
+{{!-- {{#each user as |user|}}
 <div>
-    test
+    {{user.name}}
 </div>
-{{#each posts as |post|}}
-  <div>
+{{/each}} --}}
+
+{{!-- This will display all the posts --}}
+{{#each userPosts as |post|}}
+<div>
     {{post.post}}
-  </div>
+</div>
 {{/each}}

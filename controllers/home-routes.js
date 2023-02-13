@@ -5,14 +5,20 @@ const { User, Post } = require('../models');
 // Sends to homepage
 router.get('/', async (req, res) => {
     try {
+        const userData = await User.findAll({});
+        const user = userData.map((users) =>
+        users.get({ plain: true })
+        );
+
         const postData = await Post.findAll({});
-        
-        const posts = postData.map((posts) =>
+        const userPosts = postData.map((posts) =>
         posts.get({ plain: true })
         );
-        console.log(posts);
+        // console.log(userPosts[0].posts[0].post);
+        // res.status(200).json(userPosts);
         res.render('homepage', {
-            posts,
+            user,
+            userPosts,
             loggedIn: req.session.loggedIn,
         });
     } catch (err) {
