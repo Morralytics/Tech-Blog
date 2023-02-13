@@ -51,7 +51,7 @@ router.delete('/:id', async (req, res) => {
 // Login 
 router.post('/login', async (req, res) => {
     try {
-        const userLoginData = await User.findOne({ where: { username: req.body.username }});
+        const userLoginData = await User.findOne({ where: { email: req.body.email }});
 
         if (!userLoginData) {
             res.status(400).json({ msg: 'Try again, incorrect password or username' });
@@ -66,10 +66,9 @@ router.post('/login', async (req, res) => {
         }
 
         req.session.save(() => {
-            req.session.user_id = userLoginData.id;
             req.session.loggedIn = true;
 
-            res.json({ user: userLoginData, msg: 'You are logged in!'});
+            res.status(200).json({ user: userLoginData, msg: 'You are logged in!'});
         });
 
     } catch (err) {

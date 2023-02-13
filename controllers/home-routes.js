@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
         res.render('homepage', {
             user,
             userPosts,
-            // loggedIn: req.session.loggedIn,
+            loggedIn: req.session.loggedIn,
         });
     } catch (err) {
         res.status(400).json(err);
@@ -27,8 +27,12 @@ router.get('/', async (req, res) => {
 
 // Sends to login page
 router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    };
+
     res.render('login');
 });
-
 
 module.exports = router;
