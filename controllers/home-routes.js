@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 
 // Sends to login page
 router.get('/login', (req, res) => {
-    res.render('login')
+    res.render('login');
 });
 
 
