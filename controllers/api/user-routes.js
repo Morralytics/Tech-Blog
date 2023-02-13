@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 // Creates a user
-router.post('/',  async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const postData = await User.create({
             name: req.body.name,
@@ -48,4 +48,25 @@ router.delete('/:id', async (req, res) => {
     };
 });
 
+// Login 
+router.post('/login', async (req, res) => {
+    try {
+        const userLoginData = await User.findOne({ where: { name: req.body.name }});
+
+        if (!userLoginData) {
+            res.status(400).json({ msg: 'Try again, incorrect password or username' });
+            return;
+        } 
+
+        const correctPassword = await userLoginData.checkPassword(req.body.password);
+
+        if (!correctPassword) {
+            res.status(400).json({ msg: 'Try again, incorrect password or username' });
+            return;
+        }
+
+    } catch (err) {
+        res.status(400).json(err);
+    }
+})
 module.exports = router;

@@ -14,8 +14,7 @@ router.get('/', async (req, res) => {
         const userPosts = postData.map((posts) =>
         posts.get({ plain: true })
         );
-        // console.log(userPosts[0].posts[0].post);
-        // res.status(200).json(userPosts);
+
         res.render('homepage', {
             user,
             userPosts,
