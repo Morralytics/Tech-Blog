@@ -24,3 +24,9 @@ nav {
 label {
     text-align: left;
 }
+
+.create-post {
+    display: flex;
+    justify-content: center;
+    margin-top: 40%;
+}
