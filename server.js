@@ -23,6 +23,8 @@ const sess = {
     })
 };
 
+app.set("port", PORT);
+
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
