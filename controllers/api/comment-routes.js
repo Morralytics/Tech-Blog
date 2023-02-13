@@ -26,4 +26,23 @@ router.post('/', async (req,res) => {
     } catch (err) {
         res.status(400).json(err);
     }
-})
+});
+
+router.put('/:id', async (req, res) => {
+    try {
+        const commentData = await Comment.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+        });
+
+        if (!commentData) {
+            res.status(400).json({ msg: 'No comments found with that specific id.'});
+            return;
+        } else {
+            res.status(200).json(commentData);
+        };
+    } catch (err) {
+        res.status(400).json(err);
+    };
+});
