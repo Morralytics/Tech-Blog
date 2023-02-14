@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 // Creates a post
-router.post('/', id_auth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const postData = await Post.create({
             post: req.body.post,

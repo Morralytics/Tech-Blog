@@ -5,16 +5,18 @@ const postForm = async (event) => {
     const user_id = parseInt(document.querySelector('#username-id-confirm').value.trim());
 
     if (post && user_id) {
-        const response = await fetch('/api/posts/', {
+        const response = await fetch('/api/posts', {
             method: 'POST',
             body: JSON.stringify({ post, user_id }),
-            header: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json' },
         });
-
+        console.log(post)
+        console.log(user_id)
+        console.log(response)
         if (response.ok) {
             // document.location.replace('/');
         } else {
-            alert('Failed to submit post.');
+            // alert('Failed to submit post.');
         }
     }
 };
