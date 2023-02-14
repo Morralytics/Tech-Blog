@@ -1,18 +1,18 @@
 const postForm = async (event) => {
     event.preventDefault();
 
-    const text = document.querySelector('#text-confirm').value.trim();
-    const username = document.querySelector('#username-id-confirm').value.trim();
+    const post = document.querySelector('#text-confirm').value.trim();
+    const user_id = parseInt(document.querySelector('#username-id-confirm').value.trim());
 
-    if (text && username) {
+    if (post && user_id) {
         const response = await fetch('/api/posts/', {
             method: 'POST',
-            body: JSON.stringify({ text, username }),
+            body: JSON.stringify({ post, user_id }),
             header: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            // document.location.replace('/');
         } else {
             alert('Failed to submit post.');
         }

@@ -1,10 +1,10 @@
 module.exports = {
-    id_auth: (req, res) => {
-        if(!req.session.user_id) {
+    id_auth: (req, res, next) => {
+        if(!req.session.loggedIn) {
             res.redirect('/login');
         } else {
-            return req.session.user_id;
+            next();
         }
-        return;
+        console.log(req.session);
     }
 }

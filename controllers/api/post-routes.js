@@ -19,6 +19,7 @@ router.post('/', id_auth, async (req, res) => {
             post: req.body.post,
             user_id: req.body.user_id,
         });
+        console.log(postData);
         res.status(200).json(postData);
     } catch (err) {
         res.status(400).json(err);
