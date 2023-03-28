@@ -35,11 +35,4 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-// Sends to create a post page
-router.get('/post', (req, res) => {
-    res.render('post', {
-        loggedIn: req.session.loggedIn,
-    });
-})
-
 module.exports = router;
