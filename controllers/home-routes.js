@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
             userPosts,
             loggedIn: req.session.loggedIn,
         });
-        console.log(req.session.user_id)
     } catch (err) {
         res.status(400).json(err);
     };
@@ -30,7 +29,6 @@ router.get('/login', (req, res) => {
         res.redirect('/dashboard');
         return;
     };
-
     res.render('login');
 });
 

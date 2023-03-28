@@ -5,6 +5,5 @@ module.exports = {
         } else {
             next();
         }
-        console.log(req.session);
     }
 }
