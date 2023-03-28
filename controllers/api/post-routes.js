@@ -15,9 +15,10 @@ router.get('/', async (req, res) => {
 // Creates a post
 router.post('/', async (req, res) => {
     try {
+        const postBody = req.body;
+        
         const postData = await Post.create({
-            post: req.body.post,
-            user_id: req.body.user_id,
+            ...postBody, user_id: req.session.user_id
         });
         console.log(postData);
         res.status(200).json(postData);
