@@ -11,11 +11,12 @@ const postForm = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/dashboard');
         } else {
             alert('Failed to submit post.');
         }
     }
+    
 };
 
 document.querySelector('.post-form').addEventListener('submit', postForm);
