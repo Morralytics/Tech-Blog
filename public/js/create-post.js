@@ -1,22 +1,19 @@
 const postForm = async (event) => {
     event.preventDefault();
 
-    const post = document.querySelector('#text-confirm').value.trim();
-    const user_id = parseInt(document.querySelector('#username-id-confirm').value.trim());
+    const title = document.querySelector('#post-title').value.trim();
+    const content = document.querySelector('#post-content').value.trim();
 
-    if (post && user_id) {
+    if (title && content) {
         const response = await fetch('/api/posts', {
             method: 'POST',
-            body: JSON.stringify({ post, user_id }),
+            body: JSON.stringify({ title, content }),
             headers: { 'Content-Type': 'application/json' },
         });
-        console.log(post)
-        console.log(user_id)
-        console.log(response)
         if (response.ok) {
-            // document.location.replace('/');
+            document.location.replace('/');
         } else {
-            // alert('Failed to submit post.');
+            alert('Failed to submit post.');
         }
     }
 };
