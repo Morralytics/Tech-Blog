@@ -19,6 +19,7 @@ router.get('/', async (req, res) => {
 });
 
 // Creates a user
+// This is ran from the signup section of the form which creates a brand new user and saves their session information
 router.post('/', async (req, res) => {
     try {
         const postData = await User.create({
@@ -29,6 +30,8 @@ router.post('/', async (req, res) => {
 
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.user_id = postData.id;
+            req.session.username = postData.username;
             res.status(200).json(postData)
         });
     } catch (err) {
@@ -52,6 +55,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 // Login 
+// This is ran from the login section of the form which finds a user and saves their session information
 router.post('/login', async (req, res) => {
     try {
         const userLoginData = await User.findOne({ where: { email: req.body.email }});
@@ -70,7 +74,8 @@ router.post('/login', async (req, res) => {
 
         req.session.save(() => {
             req.session.loggedIn = true;
-
+            req.session.user_id = postData.id;
+            req.session.username = postData.username;
             res.status(200).json({ user: userLoginData, msg: 'You are logged in!'});
         });
 

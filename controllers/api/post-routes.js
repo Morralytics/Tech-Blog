@@ -13,12 +13,10 @@ router.get('/', async (req, res) => {
 });
 
 // Creates a post
-router.post('/', async (req, res) => {
+router.post('/', id_auth, async (req, res) => {
     try {
-        const postBody = req.body;
-        
         const postData = await Post.create({
-            ...postBody, user_id: req.session.user_id
+            ...req.body, user_id: req.session.user_id
         });
         console.log(postData);
         res.status(200).json(postData);
