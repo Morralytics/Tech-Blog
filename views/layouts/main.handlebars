@@ -13,11 +13,13 @@
     <h1>Welcome to DevLogs blog posts!</h1>
   </header>
   <nav>
-    <a href="/">Home</a>
-    <a href="/">Dashboard</a>
     {{#if loggedIn}}
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
+    <a href="/">Home</a>
+    <a href="/login">Dashboard</a>
     <a href="/login"><button id="login">Login</button></a>
     {{/if}}
   </nav>
