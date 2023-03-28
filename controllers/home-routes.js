@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 
-
 // Sends to homepage
 router.get('/', async (req, res) => {
     try {
