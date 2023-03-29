@@ -1,9 +1,26 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
 body {
     text-align: center;
+    background-color: lightskyblue;
 }
 
 nav {
     text-align: left;
+}
+
+#title {
+    font-size: 40px;
+}
+
+hr {
+    border-color: black;
+    border-width: 3px;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: auto;
 }
 
 .login-card {
@@ -26,9 +43,24 @@ label {
 }
 
 .create-post {
-    display: flex;
-    justify-content: center;
-    margin-top: 40%;
+    text-align: right;
+}
+
+#nav-bar {
+    padding: 10px;
+}
+
+.nav {
+    padding: 5px;
+}
+
+.nav-btn {
+    font-size: 20px;
+    padding: 5px;
+    width: auto;
+    border: 2px solid gray;
+    background-color: lightgray;
+    border-radius: 10px;
 }
 
 .user-post {
@@ -50,4 +82,21 @@ label {
 
 #post-date {
     font-size: 20px;
+}
+
+#post-btn {
+    margin-right: 20%;
+    font-size: 30px;
+    padding: 5px;
+    width: auto;
+    border: 2px solid gray;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#post-btn:hover,
+.user-post:hover,
+.nav-btn:hover {
+    background-color: darkgray;
+    cursor: pointer;
 }
