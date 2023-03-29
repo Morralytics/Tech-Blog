@@ -24,10 +24,6 @@ hr {
 }
 
 .login-card {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
     height: 200px;
     padding: 30px;
 }
@@ -96,7 +92,34 @@ label {
 
 #post-btn:hover,
 .user-post:hover,
-.nav-btn:hover {
+.nav-btn:hover,
+#submit-post:hover {
     background-color: darkgray;
     cursor: pointer;
+}
+
+.post-form {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.form-input {
+    border: 2px solid gray;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+}
+
+#form-btn {
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+#submit-post {
+    border: 2px solid gray;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
 }
