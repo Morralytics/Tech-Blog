@@ -6,12 +6,12 @@ router.get('/', async (req, res) => {
     try {
         const userData = await User.findAll({});
         const user = userData.map((users) =>
-        users.get({ plain: true })
+            users.get({ plain: true })
         );
 
         const postData = await Post.findAll({});
         const userPosts = postData.map((posts) =>
-        posts.get({ plain: true })
+            posts.get({ plain: true })
         );
 
         res.render('homepage', {

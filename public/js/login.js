@@ -10,7 +10,7 @@ const loginForm = async (event) => {
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
-        
+
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
@@ -30,7 +30,7 @@ const signupForm = async (event) => {
         const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({ username, email, password }),
-            headers: { 'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {

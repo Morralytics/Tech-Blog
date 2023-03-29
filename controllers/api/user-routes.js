@@ -51,12 +51,12 @@ router.delete('/:id', async (req, res) => {
 // This is ran from the login section of the form which finds a user and saves their session information
 router.post('/login', async (req, res) => {
     try {
-        const userLoginData = await User.findOne({ where: { email: req.body.email }});
+        const userLoginData = await User.findOne({ where: { email: req.body.email } });
 
         if (!userLoginData) {
             res.status(400).json({ msg: 'Try again, incorrect password or username' });
             return;
-        } 
+        }
 
         const correctPassword = await userLoginData.checkPassword(req.body.password);
 
@@ -69,7 +69,7 @@ router.post('/login', async (req, res) => {
             req.session.loggedIn = true;
             req.session.user_id = userLoginData.id;
             req.session.username = userLoginData.username;
-            res.status(200).json({ user: userLoginData, msg: 'You are logged in!'});
+            res.status(200).json({ user: userLoginData, msg: 'You are logged in!' });
         });
 
     } catch (err) {

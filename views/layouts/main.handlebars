@@ -1,40 +1,47 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevLogs</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../css/styles.css">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevLogs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+  </head>
 
-<body>
-  <header>
-    <h1 id="title">Welcome to DevLogs blog posts!</h1>
-    <hr>
-  </header>
-  <nav id="nav-bar">
+  <body>
+    <header>
+      <h1 id="title">Welcome to DevLogs blog posts!</h1>
+      <hr />
+    </header>
+    <nav id="nav-bar">
+      {{#if loggedIn}}
+        <a href="/" class="nav"><button class="nav-btn">Home</button></a>
+        <a href="/dashboard" class="nav"><button
+            class="nav-btn"
+          >Dashboard</button></a>
+        <a href="#" class="nav"><button
+            id="logout"
+            class="nav-btn"
+          >Logout</button></a>
+      {{else}}
+        <a href="/">Home</a>
+        <a href="/login">Dashboard</a>
+        <a href="/login"><button id="login">Login</button></a>
+      {{/if}}
+    </nav>
+    <main>
+      <div class="post">
+        {{{body}}}
+      </div>
+    </main>
     {{#if loggedIn}}
-    <a href="/" class="nav"><button class="nav-btn">Home</button></a>
-    <a href="/dashboard" class="nav"><button class="nav-btn">Dashboard</button></a>
-    <a href="#" class="nav"><button id="logout" class="nav-btn">Logout</button></a>
-    {{else}}
-    <a href="/">Home</a>
-    <a href="/login">Dashboard</a>
-    <a href="/login"><button id="login">Login</button></a>
+      <script src="/js/logout.js"></script>
     {{/if}}
-  </nav>
-  <main>
-    <div class="post">
-      {{{body}}}
-    </div>
-  </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+  </body>
 
 </html>

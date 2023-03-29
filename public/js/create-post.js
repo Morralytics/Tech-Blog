@@ -16,7 +16,7 @@ const postForm = async (event) => {
             alert('Failed to submit post.');
         }
     }
-    
+
 };
 
 document.querySelector('.post-form').addEventListener('submit', postForm);
