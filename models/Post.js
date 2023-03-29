@@ -1,3 +1,4 @@
+const moment = require('moment/moment');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -13,6 +14,10 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        createdAt: {
+            type: DataTypes.STRING,
+            defaultValue: moment().format('[Created on] MMMM Do, YYYY [at] h:mm a'),
+        }
     },
     {
         sequelize,

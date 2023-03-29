@@ -1,8 +1,12 @@
 {{#each userPosts as |post|}}
-<section class="card">
-    <div class="blog">
+  <section class="card">
+    <div class="user-post">
+      <p id="post-title">
         {{post.title}}
-        {{post.content}}
+      </p>
+      <p id="post-date">
+        {{post.createdAt}}
+      </p>
     </div>
-</section>
+  </section>
 {{/each}}
