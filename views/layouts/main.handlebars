@@ -19,8 +19,8 @@
       <hr />
     </header>
     <nav id="nav-bar">
-      {{#if loggedIn}}
         <a href="/" class="nav"><button class="nav-btn">Home</button></a>
+      {{#if loggedIn}}
         <a href="/dashboard" class="nav"><button
             class="nav-btn"
           >Dashboard</button></a>
@@ -29,9 +29,10 @@
             class="nav-btn"
           >Logout</button></a>
       {{else}}
-        <a href="/">Home</a>
-        <a href="/login">Dashboard</a>
-        <a href="/login"><button id="login">Login</button></a>
+        <a href="/login"><button
+            class="nav-btn"
+          >Dashboard</button></a>
+        <a href="/login" class="nav"><button id="login" class="nav-btn">Login</button></a>
       {{/if}}
     </nav>
     <main>
