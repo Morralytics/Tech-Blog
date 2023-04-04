@@ -1,16 +1,18 @@
 {{#each posts as |posts|}}
   <section class="card">
-    <div class="user-post" onclick="test()">
-      <p id="post-title">
-        {{posts.title}} 
-      </p>
-      <p id="post-author">
-        by: 
-        {{posts.user.username}}
-      </p>
-      <p id="post-date">
-        {{posts.createdAt}}
-      </p>
-    </div>
+    <a href="/" class="post-link">
+      <div class="user-post">
+        <p id="post-title">
+          {{posts.title}}
+        </p>
+        <p id="post-author">
+          by:
+          {{posts.user.username}}
+        </p>
+        <p id="post-date">
+          {{posts.createdAt}}
+        </p>
+      </div>
+    </a>
   </section>
 {{/each}}

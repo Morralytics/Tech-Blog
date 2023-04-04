@@ -29,4 +29,8 @@ router.get('/post', id_auth, async (req, res) => {
     });
 });
 
+router.get('/edit/:id', id_auth, (req, res) => {
+    
+})
+
 module.exports = router;
