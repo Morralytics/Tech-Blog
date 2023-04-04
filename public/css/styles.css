@@ -139,8 +139,17 @@ label {
 }
 
 #post-content {
+  font-size: 20px;
   height: 120px;
   resize: none;
+}
+
+.form-header {
+  font-size: 20px;
+}
+
+#post-title {
+  font-size: 20px;
 }
 
 .form-btn {
