@@ -1,17 +1,29 @@
 <div class="row justify-space-between-md">
-  <div class="login-card">
+  <div class="edit-card">
     <h2 class="page-title" id="page-title">Edit your post!</h2>
-    <form class="form post-form">
+    <form class="form edit-form">
       <div class="form-group">
         <label for="post-title">Title:</label>
-        <input class="form-input" type="text" id="post-title" value="{{postData.title}}"/>
+        <input
+          class="form-input"
+          type="text"
+          id="post-title"
+          value="{{postData.title}}"
+        />
       </div>
       <div class="form-group">
         <label for="post-content">Content:</label>
-        <textarea class="form-input" type="text" id="post-content">{{postData.content}}</textarea>
+        <textarea
+          class="form-input"
+          type="text"
+          id="post-content"
+        >{{postData.content}}</textarea>
       </div>
       <div class="form-group form-btn">
         <button class="submit-btn" type="submit">Save!</button>
+      </div>
+      <div class="form-group remove form-btn">
+        <button class="submit-btn" id="remove-btn">Remove post</button>
       </div>
     </form>
   </div>

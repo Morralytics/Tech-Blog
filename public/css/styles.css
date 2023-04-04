@@ -117,12 +117,17 @@ label {
 }
 
 .post-form,
+.edit-form,
 #login-card,
 #signup-card,
 #login-form,
 #signup-form {
   margin-left: 30%;
   margin-right: 30%;
+}
+
+#remove-btn {
+  width: auto;
 }
 
 .form-input {
