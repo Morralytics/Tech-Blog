@@ -3,7 +3,7 @@ const { User, Post, Comment } = require('../models');
 const { id_auth } = require('../utils/helpers')
 
 // Sends to homepage
-router.get('/', id_auth, async (req, res) => {
+router.get('/', async (req, res) => {
         const postData = await Post.findAll({
             include: User,
         });
