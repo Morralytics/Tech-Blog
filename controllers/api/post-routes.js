@@ -24,6 +24,14 @@ router.post('/', id_auth, async (req, res) => {
     }
 });
 
+// Edits a post
+router.put('/:id', id_auth, async (req, res) => {
+    await Post.update({ ...req.body }, {
+        where: {
+            id: req.params.id,
+        },
+    });
+});
 
 
 module.exports = router;
