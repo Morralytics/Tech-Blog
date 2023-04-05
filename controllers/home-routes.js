@@ -18,6 +18,19 @@ router.get('/', id_auth, async (req, res) => {
     }
 );
 
+// Sends to single post page
+router.get('/post/:id', id_auth, async (req, res) => {
+    const post = await Post.findOne({
+        where: { id: req.params.id },
+    })
+    const postData = post.get({ plain: true });
+
+    res.render('single-post', {
+        loggedIn: req.session.loggedIn,
+        postData,
+    });
+});
+
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/dashboard');
