@@ -22,6 +22,13 @@ router.get('/', id_auth, async (req, res) => {
 router.get('/post/:id', id_auth, async (req, res) => {
     const post = await Post.findOne({
         where: { id: req.params.id },
+        include: [ 
+            User,
+            {
+                model: Comment,
+                include: [User]
+            },
+        ],
     })
     const postData = post.get({ plain: true });
 
