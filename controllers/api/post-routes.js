@@ -26,11 +26,30 @@ router.post('/', id_auth, async (req, res) => {
 
 // Edits a post
 router.put('/:id', id_auth, async (req, res) => {
-    await Post.update({ ...req.body }, {
-        where: {
-            id: req.params.id,
-        },
-    });
+    try {
+        await Post.update({ ...req.body }, {
+            where: {
+                id: req.params.id,
+            },
+        });
+        res.send('/dashboard')
+    } catch (err) {
+        res.status(400).json(err)
+    }
+});
+
+// Deletes a post
+router.delete('/:id', id_auth, async (req, res) => {
+    try {
+        await Post.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+        res.send('/dashboard')
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
 
 

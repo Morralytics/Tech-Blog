@@ -1,24 +1,30 @@
+const id = document.querySelector('#id').value.trim();
+
 const editForm = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('#post-title').value.trim();
     const content = document.querySelector('#post-content').value.trim();
-    const id = document.querySelector('#id').value.trim();
 
     if (title && content) {
-        const response = await fetch(`/api/posts/${id}`, {
+        await fetch(`/api/posts/${id}`, {
             method: 'PUT',
             body: JSON.stringify({ title, content }),
             headers: { 'Content-Type': 'application/json' },
         });
-        console.log(response)
-        if (response.ok) {
-            document.location.replace('/dashboard/post');
-        } else {
-            alert('Failed to submit post.');
-        }
-    }
+    };
 
+    window.location.replace('/dashboard')
 };
 
+const removePost = async (event) => {
+    await fetch(`/api/posts/${id}`, {
+        method: 'DELETE',
+    });
+
+    window.location.replace('/dashboard')
+};
+
+
 document.querySelector('.edit-form').addEventListener('submit', editForm);
+document.querySelector('#remove-btn').addEventListener('click', removePost);
