@@ -75,7 +75,9 @@ label {
 }
 
 .user-post-header,
-.user-post-content {
+.user-post-content,
+.comment-content,
+.admin-posts {
   font-size: 20px;
   border: 2px solid gray;
   background-color: lightgray;
@@ -87,7 +89,19 @@ label {
   align-items: center;
 }
 
-.all-posts-header {
+.admin-post-content {
+  margin-top: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.comment-content {
+  flex-direction: column;
+  padding: 0px;
+}
+
+.all-posts-header,
+.user-post-header {
   border-bottom: none;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
@@ -139,13 +153,14 @@ label {
 }
 
 .post-card:hover 
-.user-post-header {
+.admin-posts {
   background-color: darkgray;
 }
 
 .post-form,
 .edit-form,
 .post-card,
+.comment-card,
 #login-card,
 #signup-card,
 #login-form,
