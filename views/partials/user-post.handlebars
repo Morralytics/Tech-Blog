@@ -1,13 +1,15 @@
 {{#each userPosts as |post|}}
   <section class="card">
     <a href="/dashboard/edit/{{post.id}}" class="post-link">
-      <div class="user-post">
-        <p id="post-title">
-          {{post.title}}
-        </p>
-        <p id="post-date">
-          {{post.createdAt}}
-        </p>
+      <div class="post-card">
+        <div class="user-post-header">
+          <p id="post-title">
+            {{post.title}}
+          </p>
+          <p id="post-date">
+            {{post.createdAt}}
+          </p>
+        </div>
       </div>
     </a>
   </section>

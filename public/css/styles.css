@@ -74,26 +74,38 @@ label {
   width: auto;
 }
 
-.post-list {
-  margin-top: 5%;
-}
-
-.user-post {
+.user-post-header,
+.user-post-content {
   font-size: 20px;
   border: 2px solid gray;
   background-color: lightgray;
   padding: 5px;
   margin-top: 10px;
-  margin-right: 20%;
-  margin-left: 20%;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-#post-date {
+.all-posts-header {
+  border-bottom: none;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.all-posts-content {
+  margin-top: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.user-post-content {
   font-size: 20px;
+  border: 2px solid gray;
+}
+
+#post-date {
+  font-size: 15px;
 }
 
 #new-post-btn,
@@ -108,7 +120,7 @@ label {
   border-radius: 10px;
 }
 
-.user-post:hover,
+
 .nav-btn:hover,
 .submit-btn:hover,
 #new-post-btn:hover {
@@ -116,8 +128,24 @@ label {
   cursor: pointer;
 }
 
+.post-card:hover 
+.all-posts-header {
+  background-color: darkgray;
+}
+
+.post-card:hover 
+.all-posts-content {
+  background-color: darkgray;
+}
+
+.post-card:hover 
+.user-post-header {
+  background-color: darkgray;
+}
+
 .post-form,
 .edit-form,
+.post-card,
 #login-card,
 #signup-card,
 #login-form,

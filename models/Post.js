@@ -16,7 +16,7 @@ Post.init(
         },
         createdAt: {
             type: DataTypes.STRING,
-            defaultValue: moment().format('[Created on] MMMM Do, YYYY [at] h:mm a'),
+            defaultValue: moment().format('MMMM Do, YYYY [at] h:mm a'),
         }
     },
     {

@@ -1,17 +1,23 @@
 {{#each posts as |posts|}}
   <section class="card">
     <a href="/" class="post-link">
-      <div class="user-post">
-        <p id="post-title">
-          {{posts.title}}
-        </p>
-        <p id="post-author">
-          by:
-          {{posts.user.username}}
-        </p>
-        <p id="post-date">
-          {{posts.createdAt}}
-        </p>
+      <div class="post-card">
+        <div class="user-post-header all-posts-header">
+          <p id="post-title">
+            {{posts.title}}
+          </p>
+          <p id="post-date">
+            Posted by:
+            {{posts.user.username}}
+            on
+            {{posts.createdAt}}
+          </p>
+        </div>
+        <div class="user-post-content all-posts-content">
+          <p id="all-post-content">
+            {{posts.content}}
+          </p>
+        </div>
       </div>
     </a>
   </section>
