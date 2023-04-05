@@ -6,9 +6,6 @@ router.get('/', async (req, res) => {
         const commentData = await Comment.findAll({
             include: [{
                 model: User,
-                include: [{
-                    model: Post
-                }]
             }]
         });
 
@@ -21,7 +18,8 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const commentData = await Comment.create({ ...req.body });
+        const commentData = await Comment.create({ 
+            text: req.body.text, post_id: req.body.id, user_id: req.session.user_id });
         res.status(200).json(commentData);
     } catch (err) {
         res.status(400).json(err);

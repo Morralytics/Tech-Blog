@@ -1,3 +1,27 @@
+<section class="card">
+    <a href="/dashboard/edit/{{postData.id}}" class="post-link">
+      <div class="post-card">
+        <div class="user-post-header">
+          <p id="post-title">
+            {{postData.title}}
+          </p>
+          <p id="post-date">
+            {{postData.createdAt}}
+          </p>
+        </div>
+      </div>
+    </a>
+  </section>
+{{#if postData.comments}}
+{{#each postData.comments as |comment|}}
+<section class="card">
+    <div>
+    <p>{{comment.text}}</p>
+    <p>by {{comment.user.username}}</p>
+    </div>
+</section>
+{{/each}}
+{{/if}}
 <div class="row justify-space-between-md">
   <div class="login-card">
     <h2 class="page-title" id="page-title">Leave a comment!</h2>
@@ -5,6 +29,7 @@
       <div class="form-group">
         <label for="post-content">Comment:</label>
         <textarea class="form-input" type="text" id="comment-content"></textarea>
+        <input type="hidden" id="id" value="{{postData.id}}" />
       </div>
       <div class="form-group form-btn">
         <button class="submit-btn" type="submit">Post!</button>
