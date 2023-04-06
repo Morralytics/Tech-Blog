@@ -160,7 +160,8 @@ label {
 
 #new-post-btn,
 .btn-confirm,
-.edit-form {
+.edit-form,
+.comment-form {
   padding: 5px;
   width: auto;
   border: 2px solid #32292F;
@@ -185,6 +186,8 @@ label {
   background-color: darkgray;
 }
 
+
+
 .post-card:hover 
 .all-posts-content {
   background-color: darkgray;
@@ -200,10 +203,14 @@ label {
   cursor: pointer;
 }
 
+.custom-edit:hover {
+  cursor: auto;
+}
+
 .post-form,
 .edit-form,
+.comment-form,
 .post-card,
-.comment-card,
 #login-card,
 #signup-card,
 #login-form,

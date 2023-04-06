@@ -1,35 +1,43 @@
-<section class="card">
-  <div class="post-card">
-    <div class="user-post-header">
-      <p id="post-title">
-        {{postData.title}}
-      </p>
-      <p id="post-date">
-        {{postData.createdAt}}
-      </p>
-    </div>
-    <div class="user-post-content admin-post-content">
-      <p id="all-post-content">
-        {{postData.content}}
-      </p>
-    </div>
+<div class="card custom-card custom-edit">
+  <div class="card-header custom-admin-card">
+    <span>
+      {{postData.title}}
+    </span>
+    <span class="sub-doc">
+      {{postData.createdAt}}
+    </span>
   </div>
-</section>
+  <div class="card-body custom-card-txt">
+    <blockquote class="blockquote mb-0">
+      <p>{{postData.content}}</p>
+    </blockquote>
+  </div>
+</div>
 {{#if postData.comments}}
   {{#each postData.comments as |comment|}}
-    <section class="comment-card">
-      <div class="comment-content">
-        <p>{{comment.text}}</p>
-        <p>by {{comment.user.username}}</p>
+    <div class="card custom-card custom-edit">
+      <div class="card-body custom-card-txt">
+        <blockquote class="blockquote mb-0">
+          <p>{{comment.text}}</p>
+          <footer class="blockquote-footer custom-card-footer">
+            <cite title="Source Title">
+              by:
+              {{comment.user.username}}
+            </cite>
+          </footer>
+        </blockquote>
       </div>
-    </section>
+    </div>
   {{/each}}
 {{/if}}
+<footer class="container">
+  <h1 class="text-container-footer" id="title">Leave a comment!</h1>
+</footer>
+<br>
 <div class="row justify-space-between-md">
   <div class="comment-card">
-    <h2 class="page-title" id="page-title">Leave a comment!</h2>
     <form class="form comment-form">
-      <div class="form-group">
+      {{!-- <div class="form-group">
         <label for="post-content">Comment:</label>
         <textarea
           class="form-input"
@@ -40,6 +48,17 @@
       </div>
       <div class="form-group form-btn">
         <button class="submit-btn" type="submit">Post!</button>
+      </div> --}}
+            <div class="form-group">
+        <label class="form-header" for="post-content" id="custom-post-content">Comment:</label>
+        <textarea
+          class="form-input"
+          type="text"
+          id="post-content"
+        ></textarea>
+      </div>
+      <div class="form-group form-btn">
+        <button class="submit-btn" type="submit" id="save-btn">Save</button>
       </div>
     </form>
   </div>
