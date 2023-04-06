@@ -1,13 +1,14 @@
-  <div class="create-post">
+  <header class="container">
+    <h1 class="text-container-header" id="title">{{userInfo.username}}'s posts</h1>
+  </header>
+  <br>
+  <div class="post-list">
+    {{> user-post}}
+  </div>
+    <div class="create-post">
     <a href="/dashboard/post">
       <button class="post-btn" id="new-post-btn">Create new post!</button>
     </a>
-  </div>
-  <div id="user-dashboard">
-    <p id="user-name">{{userInfo.username}}'s posts</p>
-  </div>
-  <div class="post-list">
-    {{> user-post}}
   </div>
 
   <script src="/js/dashboard.js"></script>

@@ -1,16 +1,17 @@
 {{#each userPosts as |post|}}
-  <section class="card">
-    <a href="/dashboard/edit/{{post.id}}" class="post-link">
-      <div class="post-card">
-        <div class="admin-posts">
-          <p id="post-title">
-            {{post.title}}
-          </p>
-          <p id="post-date">
-            {{post.createdAt}}
-          </p>
-        </div>
-      </div>
-    </a>
-  </section>
+  <div class="card custom-card" onclick="location.href='/post/{{post.id}}'">
+    <div class="card-header custom-admin-card">
+      <span>
+        {{post.title}}
+      </span>
+      <span class="sub-doc">
+        {{post.createdAt}}
+      </span>
+    </div>
+    <div class="card-body custom-card-txt">
+      <blockquote class="blockquote mb-0">
+        <p>{{post.content}}</p>
+      </blockquote>
+    </div>
+  </div>
 {{/each}}

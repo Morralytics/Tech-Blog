@@ -73,12 +73,10 @@ label {
 #user-dashboard {
   margin-left: 40%;
   margin-right: 40%;
-  margin-top: 5%;
 }
 
 #user-name {
-  border-bottom: 2px solid black;
-  font-size: 30px;
+  font-size: 2.5rem;
   font-weight: bold;
   width: auto;
 }
@@ -111,12 +109,20 @@ label {
   margin-right: 30%;
 }
 
-.custom-card-header {
+.custom-card-header,
+.custom-admin-card {
   border-bottom: 1px solid #32292F;
 }
 
-.custom-card-footer {
+.custom-admin-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-card-footer,
+.sub-doc {
   color: #EDFFEC;
+  padding: 0;
 }
 
 .admin-post-content {
