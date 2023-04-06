@@ -1,24 +1,15 @@
 {{#each posts as |posts|}}
-  <section class="card">
-    <a href="/post/{{posts.id}}" class="post-link">
-      <div class="post-card">
-        <div class="user-post-header all-posts-header">
-          <p class="text-container-content" id="all-post-title">
-            {{posts.title}}
-          </p>
-          <p class="text-container-content" id="post-date">
-            Posted by:
-            {{posts.user.username}}
-            on
-            {{posts.createdAt}}
-          </p>
-        </div>
-        <div class="user-post-content all-posts-content">
-          <p class="text-container-content" id="all-post-content">
-            {{posts.content}}
-          </p>
-        </div>
-      </div>
-    </a>
-  </section>
+  <div class="card custom-card">
+    <div class="card-header custom-card-header">
+      {{posts.title}}
+    </div>
+    <div class="card-body custom-card-txt">
+      <blockquote class="blockquote mb-0">
+        <p>{{posts.content}}</p>
+        <footer class="blockquote-footer custom-card-footer"><cite
+            title="Source Title"
+          >{{posts.user.username}} on {{posts.createdAt}}</cite></footer>
+      </blockquote>
+    </div>
+  </div>
 {{/each}}
