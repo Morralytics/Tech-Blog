@@ -161,7 +161,9 @@ label {
 #new-post-btn,
 .btn-confirm,
 .edit-form,
-.comment-form {
+.comment-form,
+.login-form,
+.signup-form {
   padding: 5px;
   width: auto;
   border: 2px solid #32292F;
@@ -234,7 +236,12 @@ label {
   background-color: #EDFFEC;
 }
 
-#post-title {
+#post-title,
+#email-login,
+#password-login,
+#username-signup,
+#email-signup,
+#password-signup {
   background-color: #EDFFEC;
 }
 
@@ -244,6 +251,11 @@ label {
 
 #custom-post-title,
 #post-title,
+#email-login,
+#password-login,
+#username-signup,
+#email-signup,
+#password-signup,
 #post-content,
 #comment-content,
 #custom-post-content,
