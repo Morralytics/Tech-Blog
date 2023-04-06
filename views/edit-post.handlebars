@@ -1,9 +1,12 @@
+<header class="container">
+  <h1 class="text-container-header" id="title">Edit your post!</h1>
+</header>
+<br>
 <div class="row justify-space-between-md">
   <div class="edit-card">
-    <h2 class="page-title" id="page-title">Edit your post!</h2>
     <form class="form edit-form">
       <div class="form-group">
-        <label class="form-header" for="post-title">Title:</label>
+        <label class="form-header" for="post-title" id="custom-post-title">Title:</label>
         <input
           class="form-input"
           type="text"
@@ -13,7 +16,7 @@
         <input type="hidden" id="id" value="{{postData.id}}" />
       </div>
       <div class="form-group">
-        <label class="form-header" for="post-content">Content:</label>
+        <label class="form-header" for="post-content" id="custom-post-content">Content:</label>
         <textarea
           class="form-input"
           type="text"
@@ -21,7 +24,7 @@
         >{{postData.content}}</textarea>
       </div>
       <div class="form-group form-btn">
-        <button class="submit-btn" type="submit">Save!</button>
+        <button class="submit-btn" type="submit" id="save-btn">Save</button>
       </div>
       <div class="form-group remove form-btn">
         <button class="submit-btn" id="remove-btn">Remove post</button>

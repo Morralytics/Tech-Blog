@@ -35,7 +35,6 @@ body {
 }
 
 #title {
-  border-bottom: 3px solid #EDFFEC;
   margin-left: 30%;
   margin-right: 30%;
   width: auto;
@@ -101,7 +100,7 @@ label {
   margin-left: 30%;
   margin-bottom: 15px;
   background-color: #DABECA;
-  border: 1px solid #32292F;
+  border: 2px solid #32292F;
   box-shadow: 8px 5px 5px #32292F;
 }
 
@@ -112,7 +111,7 @@ label {
 
 .custom-card-header,
 .custom-admin-card {
-  border-bottom: 1px solid #32292F;
+  border-bottom: 2px solid #32292F;
 }
 
 .custom-admin-card {
@@ -160,11 +159,14 @@ label {
 }
 
 #new-post-btn,
-.btn-confirm {
+.btn-confirm,
+.edit-form {
   padding: 5px;
   width: auto;
   border: 2px solid #32292F;
   background-color: #DABECA;
+  color: #EDFFEC;
+  font-weight: bold;
   border-radius: 10px;
   box-shadow: 5px 5px 8px #32292F;
 }
@@ -174,6 +176,7 @@ label {
 .submit-btn:hover,
 #new-post-btn:hover {
   background-color: #667761;
+  border-color: #32292F;
   cursor: pointer;
 }
 
@@ -209,10 +212,6 @@ label {
   margin-right: 30%;
 }
 
-#remove-btn {
-  width: auto;
-}
-
 .form-input {
   border: 2px solid #32292F;
   background-color: lightgray;
@@ -222,17 +221,31 @@ label {
 }
 
 #post-content {
-  font-size: 20px;
   height: 120px;
   resize: none;
+  background-color: #EDFFEC;
+}
+
+#post-title {
+  background-color: #EDFFEC;
 }
 
 .form-header {
   font-size: 20px;
 }
 
-#post-title {
-  font-size: 20px;
+#custom-post-title,
+#post-title,
+#post-content,
+#custom-post-content,
+.custom-admin-card,
+.custom-card-txt,
+.custom-card-header,
+.submit-btn,
+#save-btn,
+#remove-btn {
+  font-weight:bolder;
+  color: #32292F
 }
 
 .form-btn {
@@ -241,9 +254,8 @@ label {
 }
 
 .submit-btn {
-  font-size: 20px;
   border: 2px solid #32292F;
-  background-color: lightgray;
+  background-color: #EDFFEC;
   border-radius: 10px;
   padding: 10px;
   width: auto;
