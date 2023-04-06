@@ -106,6 +106,11 @@ label {
   border: 1px solid #32292F;
 }
 
+.custom-card-a {
+  text-decoration: none;
+  margin-right: 30%;
+}
+
 .custom-card-header {
   border-bottom: 1px solid #32292F;
 }

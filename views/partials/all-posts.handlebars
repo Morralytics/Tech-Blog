@@ -1,5 +1,5 @@
 {{#each posts as |posts|}}
-  <div class="card custom-card">
+  <div class="card custom-card" onclick="location.href='/post/{{posts.id}}'">
     <div class="card-header custom-card-header">
       {{posts.title}}
     </div>
