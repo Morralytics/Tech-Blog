@@ -227,7 +227,8 @@ label {
   width: auto;
 }
 
-#post-content {
+#post-content,
+#comment-content {
   height: 120px;
   resize: none;
   background-color: #EDFFEC;
@@ -244,6 +245,7 @@ label {
 #custom-post-title,
 #post-title,
 #post-content,
+#comment-content,
 #custom-post-content,
 .custom-admin-card,
 .custom-card-txt,
