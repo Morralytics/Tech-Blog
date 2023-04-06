@@ -1,4 +1,4 @@
-<div class="row justify-space-between-md">
+{{!-- <div class="row justify-space-between-md">
   <div class="login-card">
     <h2 class="page-title" id="page-title">Create a new blog post!</h2>
     <form class="form post-form">
@@ -12,6 +12,41 @@
       </div>
       <div class="form-group form-btn">
         <button class="submit-btn" type="submit">Post!</button>
+      </div>
+    </form>
+  </div>
+</div> --}}
+
+<header class="container">
+  <h1 class="text-container-header" id="title">Start a new blog post!</h1>
+</header>
+<br />
+<div class="row justify-space-between-md">
+  <div class="edit-card">
+    <form class="form edit-form" id="post-form">
+      <div class="form-group">
+        <label class="form-header" for="post-title" id="custom-post-title">Title:</label>
+        <input
+          class="form-input"
+          type="text"
+          id="post-title"
+          value="{{postData.title}}"
+        />
+        <input type="hidden" id="id" value="{{postData.id}}" />
+      </div>
+      <div class="form-group">
+        <label class="form-header" for="post-content" id="custom-post-content">Content:</label>
+        <textarea
+          class="form-input"
+          type="text"
+          id="post-content"
+        >{{postData.content}}</textarea>
+      </div>
+      <div class="form-group form-btn">
+        <button class="submit-btn" type="submit" id="save-btn">Save</button>
+      </div>
+      <div class="form-group remove form-btn">
+        <button class="submit-btn" id="remove-btn">Remove post</button>
       </div>
     </form>
   </div>
