@@ -102,6 +102,7 @@ label {
   margin-bottom: 15px;
   background-color: #DABECA;
   border: 1px solid #32292F;
+  box-shadow: 8px 5px 5px #32292F;
 }
 
 .custom-card-a {
@@ -165,17 +166,18 @@ label {
   border: 2px solid #32292F;
   background-color: #DABECA;
   border-radius: 10px;
+  box-shadow: 5px 5px 8px #32292F;
 }
 
 
 .nav-btn:hover,
 .submit-btn:hover,
 #new-post-btn:hover {
-  background-color: 667761;
+  background-color: #667761;
   cursor: pointer;
 }
 
-.post-card:hover 
+.custom-card:hover 
 .all-posts-header {
   background-color: darkgray;
 }
@@ -188,6 +190,11 @@ label {
 .post-card:hover 
 .admin-posts {
   background-color: darkgray;
+}
+
+.custom-card:hover {
+  box-shadow: 8px 5px 5px #32292F;
+  cursor: pointer;
 }
 
 .post-form,
