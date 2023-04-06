@@ -63,7 +63,7 @@ label {
 }
 
 .create-post {
-  text-align: right;
+  text-align: center;
 }
 
 #nav-bar {
@@ -160,13 +160,10 @@ label {
 
 #new-post-btn,
 .btn-confirm {
-  margin-right: 20%;
-  margin-left: 20%;
-  font-size: 30px;
   padding: 5px;
   width: auto;
   border: 2px solid #32292F;
-  background-color: lightgray;
+  background-color: #DABECA;
   border-radius: 10px;
 }
 
@@ -174,7 +171,7 @@ label {
 .nav-btn:hover,
 .submit-btn:hover,
 #new-post-btn:hover {
-  background-color: darkgray;
+  background-color: 667761;
   cursor: pointer;
 }
 
